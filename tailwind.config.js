@@ -21,16 +21,19 @@ module.exports = {
         ...theme('colors'),
         'primary': '#FEFEFE',
         'secundary': '#F3F0ED',
-        'terciary': '#90887F',
+        'terciary': '#FFFBF4',
         'extra':'#55524B'
       }),
       textColor: theme => ({
         ...theme('colors'),
         'primary': '#FEFEFE',
         'secundary': '#F3F0ED',
-        'terciary': '#90887F',
+        'terciary': '#FFFBF4',
         'extra':'#55524B'
       }),
+      fontFamily:{
+        Caprasimo:['Caprasimo','sans-serif']
+      }
     },
   },
   plugins: [],
