@@ -1,0 +1,29 @@
+{
+  "name": "welling_digital_invitation",
+  "version": "0.0.1",
+  "description": "Web Page regarding a wedding event's ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw:build": "tailwindcss -i ./src/css/index.css -o ./public/css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project-Dojo-Portfolio/Welling_Invitation_Card.git"
+  },
+  "keywords": [
+    "welling",
+    "design"
+  ],
+  "author": "Kevin Ortiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Project-Dojo-Portfolio/Welling_Invitation_Card/issues"
+  },
+  "homepage": "https://github.com/Project-Dojo-Portfolio/Welling_Invitation_Card#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}
