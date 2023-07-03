@@ -22,14 +22,14 @@ module.exports = {
         'primary': '#FEFEFE',
         'secundary': '#F3F0ED',
         'terciary': '#FFFBF4',
-        'extra':'#55524B'
+        'extra':'#945600'
       }),
       textColor: theme => ({
         ...theme('colors'),
         'primary': '#FEFEFE',
         'secundary': '#F3F0ED',
         'terciary': '#FFFBF4',
-        'extra':'#55524B'
+        'extra':'#945600'
       }),
       fontFamily:{
         Caprasimo:['Caprasimo','sans-serif']
