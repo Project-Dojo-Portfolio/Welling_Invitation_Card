@@ -14,25 +14,29 @@ module.exports = {
         'collage7':"url('../img/collage7.jpeg')",
         'collage8':"url('../img/collage8.jpeg')",
         'our_story':"url('../img/our_story.png')",
-        'portada':"url('../img/portada.jpeg')",
+        'portada':"url('../img/portada.jpg')",
         'collage9':"url('../img/collage9.jpeg')"
       },
       backgroundColor: theme => ({
         ...theme('colors'),
         'primary': '#FEFEFE',
-        'secundary': '#F3F0ED',
-        'terciary': '#FFFBF4',
-        'extra':'#945600'
+        'secundary': '#9A8C98',
+        'terciary': '#9C8565',
+        'extra':'#945600',
+        'gold':'#EDAE49'
       }),
       textColor: theme => ({
         ...theme('colors'),
         'primary': '#FEFEFE',
-        'secundary': '#F3F0ED',
-        'terciary': '#FFFBF4',
-        'extra':'#945600'
+        'secundary': '#6E3F67',
+        'terciary': '#9C8565',
+        'extra':'#945600',
+        'gold': '#EDAE49'
       }),
       fontFamily:{
-        Caprasimo:['Caprasimo','sans-serif']
+        Montserrat:['Montserrat','sans-serif'],
+        Dancing_Script:['Dancing Script', 'cursive'],
+        Playfair_Display:['Playfair Display','serif']
       }
     },
   },
