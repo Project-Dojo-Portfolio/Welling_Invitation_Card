@@ -184,7 +184,7 @@
         <p class="font-Dancing_Script text-center text-white text-3xl font-bold" id="nombreInvitado">Nombre Invitado</p>
         <p class="font-Montserrat text-center text-white text-lg font-bold" id="numeroAsiento">Tenemos reservados x asientos</p>
         <p class="font-Montserrat text-center text-white text-lg font-thin">para que puedas acompañarnos, por favor confirma tu asistencia</p>
-        <button type="button" class="w-1/3 bg-terciary p-4 font-Montserrat m-7 text-white text-xl" id="btnConfirmar">Confirmar</button>
+        <button type="button" class=" bg-terciary p-4 font-Montserrat m-7 text-white text-xl" id="btnConfirmar">Confirmar</button>
 
     </section>
     <section class="w-full h-1/2 bg-white" id="regalo">
@@ -409,6 +409,7 @@
     });
 
  let valueParameter = params.id;
+ let collectionParameter = params.collection;
     
 
   // Your web app's Firebase configuration
@@ -427,16 +428,16 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const querySnapshop = await getDoc(doc(db, `1/${valueParameter}`));
+  const querySnapshop = await getDoc(doc(db, `${collectionParameter}/${valueParameter}`));
   console.log(JSON.stringify(querySnapshop.data()));
   document.getElementById('nombreInvitado').innerHTML = `${querySnapshop.data().name}`;
   document.getElementById('numeroAsiento').innerHTML = `Tenemos ${querySnapshop.data().cantidad > 1 ? 'reservados': 'reservado'} ${querySnapshop.data().cantidad} ${querySnapshop.data().cantidad > 1 ? 'asientos': 'asiento'}`;
-  function confirmarAsistencia(){
+  async function confirmarAsistencia(){
     if(!("attended" in querySnapshop.data())){
         const updateData = {
             attended: true
         };
-        updateDoc(doc(db, `1/${valueParameter}`), updateData, {merge: true});
+        updateDoc(doc(db, `${collectionParameter}/${valueParameter}`), updateData, {merge: true});
     }else{
         console.log('entro aqui')
         document.getElementById('modal-title-confirmacion').innerHTML = 'Confirmacion Ya enviada';
