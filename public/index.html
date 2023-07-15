@@ -181,42 +181,11 @@
     </section>
     <section class="w-full h-auto bg-secundary flex flex-col items-center" id="asistencia">
         <h1 class="font-Montserrat text-3xl font-extrabold text-white pt-3 pb-3">R S V P</h1>
-        <p class="font-Montserrat text-center text-white text-lg font-thin">Esperamos que puedas acompañarnos</p>
-        <p class="font-Montserrat text-center text-white text-lg font-thin">Confirma tu asistencia</p>
-        <form class="w-full h-auto flex flex-col  ml-1 items-center">
-            <div class="mb-6 p-4">
-                <label for="text"
-                    class="block mb-2  text-white dark:text-white font-Montserrat text-lg text-center">Nombre y
-                    Apellido</label>
-                <input type="text" id="text"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-3 w-60 font-Montserrat"
-                    placeholder="tu respuesta" required>
-            </div>
-            <div class="flex items-start mb-6">
-                <div class="flex items-center">
-                    <input id="asistir_boda" type="checkbox" value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:bg-secundary dark:bg-gray-700 dark:border-gray-600 dark:focus:bg-secundary dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                        required>
-                </div>
-                <label for="asistir_boda" class="ml-2  font-bold text-white font-Montserrat">Si, confirmo</label>
-            </div>
-            <div class="flex items-start mb-6">
-                <div class="flex items-center">
-                    <input id="asistir_boda" type="checkbox" value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                        required>
-                </div>
-                <label for="asistir_boda" class="ml-2  font-bold text-white font-Montserrat">No podré asistir</label>
-            </div>
-            <label for="text" class="  text-white dark:text-white font-Montserrat text-lg text-center">Nombre de
-                Acompañante/s</label>
-            <label for="text" class="  text-white dark:text-white font-Montserrat text-lg text-center">según
-                corresponda</label>
-            <input type="text" id="text-amigo"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-3 w-60 font-Montserrat"
-                placeholder="tu respuesta" required>
-            <button type="submit" class="w-1/3 bg-terciary p-4 font-Montserrat m-7 text-white text-xl">Enviar</button>
-        </form>
+        <p class="font-Dancing_Script text-center text-white text-3xl font-bold" id="nombreInvitado">Nombre Invitado</p>
+        <p class="font-Montserrat text-center text-white text-lg font-bold" id="numeroAsiento">Tenemos reservados x asientos</p>
+        <p class="font-Montserrat text-center text-white text-lg font-thin">para que puedas acompañarnos, por favor confirma tu asistencia</p>
+        <button type="button" class="w-1/3 bg-terciary p-4 font-Montserrat m-7 text-white text-xl" id="btnConfirmar">Confirmar</button>
+
     </section>
     <section class="w-full h-1/2 bg-white" id="regalo">
         <div class="w-full h-full flex flex-col items-center">
@@ -370,6 +339,49 @@
             </div>
         </div>
     </div>
+    <div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal_confirmacion">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+                <!--
+                  Modal panel, show/hide based on modal state.
+          
+                  Entering: "ease-out duration-300"
+                    From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    To: "opacity-100 translate-y-0 sm:scale-100"
+                  Leaving: "ease-in duration-200"
+                    From: "opacity-100 translate-y-0 sm:scale-100"
+                    To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                -->
+                <div
+                    class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                <h3 class="text-base font-semibold leading-6 text-gray-900 font-Montserrat"
+                                    id="modal-title-confirmacion">Confirmacion enviada</h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-500 font-Montserrat" id="text-confirmacion">Muchas gracias por confirmar</p>
+                                    <p class="text-sm text-gray-500 font-Montserrat" id="validacion-confirmacion">Se ha registrado con exito tu asistencia</p>
+
+                                    <p class="text-sm text-gray-500 pt-2 font-Montserrat">En el caso que no puedas asistir, por favor comunicate
+                                        con este numero 0982743539(Kevin Ortiz)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button"
+                            class="inline-flex w-full justify-center rounded-md bg-terciary px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto"
+                             id="closePopUpConfirmacion">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script type="text/javascript">
     function showPopUp() {
@@ -380,6 +392,68 @@
         const divModalRegalo = document.getElementById('modal_regalo');
         divModalRegalo.classList.add('hidden');
     }
+
+    function confirmarAsistencia(){
+        console.log('mundo')
+    }
+</script>
+<script type="module">
+     // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+  import { getFirestore,doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+ let valueParameter = params.id;
+    
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB91YKOhk165quWPpdY3nxRu7ZLGRUyrcM",
+    authDomain: "widding-service-invitation.firebaseapp.com",
+    databaseURL: "https://widding-service-invitation-default-rtdb.firebaseio.com",
+    projectId: "widding-service-invitation",
+    storageBucket: "widding-service-invitation.appspot.com",
+    messagingSenderId: "792935302064",
+    appId: "1:792935302064:web:9d371af02cb1e2c5390c75",
+    measurementId: "G-KZJP1VM1N9"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const querySnapshop = await getDoc(doc(db, `1/${valueParameter}`));
+  console.log(JSON.stringify(querySnapshop.data()));
+  document.getElementById('nombreInvitado').innerHTML = `${querySnapshop.data().name}`;
+  document.getElementById('numeroAsiento').innerHTML = `Tenemos ${querySnapshop.data().cantidad > 1 ? 'reservados': 'reservado'} ${querySnapshop.data().cantidad} ${querySnapshop.data().cantidad > 1 ? 'asientos': 'asiento'}`;
+  function confirmarAsistencia(){
+    if(!("attended" in querySnapshop.data())){
+        const updateData = {
+            attended: true
+        };
+        updateDoc(doc(db, `1/${valueParameter}`), updateData, {merge: true});
+    }else{
+        console.log('entro aqui')
+        document.getElementById('modal-title-confirmacion').innerHTML = 'Confirmacion Ya enviada';
+        document.getElementById('text-confirmacion').innerHTML = 'Atencion!';
+        document.getElementById('validacion-confirmacion').innerHTML = `${querySnapshop.data().name} no se puede confirmar dos veces la misma invitacion`
+
+    }
+    const divModalRegalo = document.getElementById('modal_confirmacion');
+    divModalRegalo.classList.remove('hidden');
+  }
+
+    function closePopUpConfirmacion() {
+        const divModalRegalo = document.getElementById('modal_confirmacion');
+        divModalRegalo.classList.add('hidden');
+    }
+    document.getElementById('btnConfirmar').addEventListener('click',confirmarAsistencia);
+    document.getElementById('closePopUpConfirmacion').addEventListener('click',closePopUpConfirmacion)
 </script>
 
 </html>
