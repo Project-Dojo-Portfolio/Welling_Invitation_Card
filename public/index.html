@@ -187,7 +187,7 @@
         <h1 class="font-Montserrat text-3xl font-extrabold text-white pt-8 pb-4">R S V P</h1>
         <p class="font-Dancing_Script text-center text-white text-3xl font-bold pb-2" id="nombreInvitado">Nombre Invitado</p>
         <p class="font-Montserrat text-center text-white text-lg font-thin pt-3" id="numeroAsiento">Tenemos reservados x asientos</p>
-        <p class="font-Montserrat text-center text-white text-lg font-thin">para que puedas acompañarnos, por favor confirma tu asistencia</p>
+        <p class="font-Montserrat text-center text-white text-lg font-thin" id="labelNumeroAsiento">para que puedas acompañarnos, por favor confirma tu asistencia</p>
         <button type="button" class=" bg-terciary p-4 font-Montserrat m-7 text-white text-xl" id="btnConfirmar">Confirmar</button>
 
     </section>
@@ -436,6 +436,7 @@
   console.log(JSON.stringify(querySnapshop.data()));
   document.getElementById('nombreInvitado').innerHTML = `${querySnapshop.data().name}`;
   document.getElementById('numeroAsiento').innerHTML = `Tenemos ${querySnapshop.data().cantidad > 1 ? 'reservados': 'reservado'} ${querySnapshop.data().cantidad} ${querySnapshop.data().cantidad > 1 ? 'asientos': 'asiento'}`;
+  document.getElementById('labelNumeroAsiento').innerHTML = `para que ${collectionParameter === '2' ? 'puedan' : 'puedas'} acompañarnos, por favor confirma tu asistencia`;
   async function confirmarAsistencia(){
     if(!("attended" in querySnapshop.data())){
         const updateData = {
